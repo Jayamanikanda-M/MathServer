@@ -32,7 +32,8 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
-html
+menu.html
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,8 +70,10 @@ html
     {% endif %}
 </body>
 </html>
+```
 
 views.py
+```
 from django.shortcuts import render
 
 def act(request):
@@ -84,8 +87,9 @@ def act(request):
         except ValueError:
             power = "Invalid input. Please enter numbers only."
     return render(request, "power.html", {'POWER': power})
-    
+```
 urls.py
+```
 from django.contrib import admin
 from django.urls import path
 from mathapp import views
@@ -94,7 +98,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.act, name="home"),
 ]
-
+```
     
 
 
